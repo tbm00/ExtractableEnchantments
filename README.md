@@ -17,5 +17,3 @@ A spigot plugin that enables players to extract enchantments from items.
 - **Parent:** https://github.com/OfficialRell/ExtractableEnchantments/
 
     v11.6, commit `d8c75f4`
-    - switched from 1.8.8 to 1.20.4 spigot api
-    - fixed some deprecated methods
