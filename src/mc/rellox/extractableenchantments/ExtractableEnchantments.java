@@ -6,10 +6,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+//import org.bukkit.entity.Player;
+//import org.bukkit.event.EventHandler;
+//import org.bukkit.event.Listener;
+//import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,12 +20,13 @@ import mc.rellox.extractableenchantments.hook.HookRegistry;
 import mc.rellox.extractableenchantments.item.enchantment.EnchantmentRegistry;
 import mc.rellox.extractableenchantments.utility.Keys;
 import mc.rellox.extractableenchantments.utility.Metrics;
-import mc.rellox.extractableenchantments.utility.Utility;
-import mc.rellox.extractableenchantments.utility.Version;
+//import mc.rellox.extractableenchantments.utility.Utility;
+//import mc.rellox.extractableenchantments.utility.Version;
 
 public class ExtractableEnchantments extends JavaPlugin {
 	
-	public static final double PLUGIN_VERSION = 11.6;
+	//public static final double PLUGIN_VERSION = 11.6;
+	public static final String PLUGIN_VERSION = "11.6-MC64";
     
 	private static Plugin plugin;
 	
@@ -34,20 +35,20 @@ public class ExtractableEnchantments extends JavaPlugin {
     @Override
     public void onLoad() {
 		plugin = this;
-		loaded = Version.version != null;
+		loaded = true; //Version.version != null;
     }
 	
 	@Override
 	public void onEnable() {
 		if(loaded == true) {
-			Utility.check(73954, s -> {
+			/*Utility.check(73954, s -> {
 				if(Utility.isDouble(s) == false) return; 
 				double v = Double.parseDouble(s);
 				if(v <= PLUGIN_VERSION) return;
 				Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "[EE] " + ChatColor.YELLOW + "A newer version is available! "
 						+ ChatColor.GOLD + "To download visit: " + "https://www.spigotmc.org/resources/extractable-enchantments.73954/");
 				new UpdateAvailable();
-			});
+			});*/
 			Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "Extractable Enchantments " + 
 					ChatColor.AQUA + "v" + PLUGIN_VERSION + ChatColor.GREEN + " enabled!");
 			
@@ -90,7 +91,7 @@ public class ExtractableEnchantments extends JavaPlugin {
 		new Metrics(this, 8524);
 	}
 	
-	private static class UpdateAvailable implements Listener {
+	/*private static class UpdateAvailable implements Listener {
 		
 		public UpdateAvailable() {
 			Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -105,6 +106,6 @@ public class ExtractableEnchantments extends JavaPlugin {
 					"https://www.spigotmc.org/resources/extractable-enchantments.73954/");
 		}
 
-	}
+	}*/
 
 }

@@ -10,7 +10,7 @@ import mc.rellox.extractableenchantments.text.content.Content.Variables;
 
 public interface Language {
 	
-	public static final String prefix_chance = "§#§0§#";
+	public static final String prefix_chance = "ï¿½#ï¿½0ï¿½#"; // dont understand how this works
 
 	public static Content get(String key) {
 		List<Content> list = CF.l.get(key);

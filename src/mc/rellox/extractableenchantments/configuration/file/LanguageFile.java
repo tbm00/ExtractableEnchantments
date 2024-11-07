@@ -37,49 +37,49 @@ public final class LanguageFile extends AbstractFile {
 	protected void initialize() {
 		convert();
 		
-		put("Price.experience-points.not-enough", "<#800000>(!) <#ff8000>Not enough experience points!");
+		put("Price.experience-points.not-enough", "§8[§f-§8] §cNot enough experience points!");
 		put("Price.experience-points.value", "%price% Experience Points");
-		put("Price.experience-levels.not-enough", "<#800000>(!) <#ff8000>Not enough experience levels!");
+		put("Price.experience-levels.not-enough", "§8[§f-§8] §cNot enough experience levels!");
 		put("Price.experience-levels.value", "%price% Experience Levels");
-		put("Price.materials.not-enough", "<#800000>(!) <#ff8000>Not enough materials!");
-		put("Price.materials.value", "%price% � %material%");
-		put("Price.economy.not-enough", "<#800000>(!) <#ff8000>Insufficient funds!");
+		put("Price.materials.not-enough", "§8[§f-§8] §cNot enough materials!");
+		put("Price.materials.value", "%price% - %material%");
+		put("Price.economy.not-enough", "§8[§f-§8] §cInsufficient funds!");
 		put("Price.economy.value", "$%price%");
 		
-		put("Permission.warning.craft-extractor", "<#800000>(!) <#ff8000>You do not have the permission to craft this!");
-		put("Permission.warning.craft-dust", "<#800000>(!) <#ff8000>You do not have the permission to craft this!");
-		put("Permission.warning.use-extractor", "<#800000>(!) <#ff8000>You do not have the permission to use this!");
-		put("Permission.warning.apply-book", "<#800000>(!) <#ff8000>You do not have the permission to apply this!");
-		put("Permission.warning.use-dust", "<#800000>(!) <#ff8000>You do not have the permission to apply this!");
-		put("Permission.warning.split-dust", "<#800000>(!) <#ff8000>You do not have the permission to split this!");
+		put("Permission.warning.craft-extractor", "§8[§f-§8] §cYou do not have the permission to craft this!");
+		put("Permission.warning.craft-dust", "§8[§f-§8] §cYou do not have the permission to craft this!");
+		put("Permission.warning.use-extractor", "§8[§f-§8] §cYou do not have the permission to use this!");
+		put("Permission.warning.apply-book", "§8[§f-§8] §cYou do not have the permission to apply this!");
+		put("Permission.warning.use-dust", "§8[§f-§8] §cYou do not have the permission to apply this!");
+		put("Permission.warning.split-dust", "§8[§f-§8] §cYou do not have the permission to split this!");
 		
-		put("Extractor.info.chance", "<#a6a6a6>Extraction chance: <#6699ff>%chance%%");
-		put("Extractor.info.price", "<#a6a6a6>Extraction price: <#66ff66>%price%");
+		put("Extractor.info.chance", "<#a6a6a6>Extraction chance: §f%chance%%");
+		put("Extractor.info.price", "<#a6a6a6>Extraction price: §f%price%");
 		put("Extractor.info.destroy", "<#bf0000><!italic>Destroys enchantment on failure!");
 		put("Extractor.info.unknown-chance", "???");
 		
-		put("Extraction.success", "<#008000>(!) <#00ff00>Successfully extracted %enchantment%");
-		put("Extraction.fail", "<#800000>(!) <#ff8000>Extraction Failed!");
-		put("Extraction.unsafe", "<#800000>(!) <#ff8000>Unable to extract unsafe enchantments!");
-		put("Extraction.constraint", "<#800000>(!) <#ff8000>Cannot extract from this item!");
-		put("Extraction.filter.minecraft", "<#800000>(!) <#ff8000>Unable to extract non-minecraft enchantments!");
-		put("Extraction.filter.custom", "<#800000>(!) <#ff8000>Unable to extract minecraft enchantments!");
-		put("Extraction.destroy", "<#800000>(!) <#ff8000>Extraction Failed! <#ff0000>Enchantment %enchantment% was destroyed!");
+		put("Extraction.success", "§8[§f-§8] §aSuccessfully extracted %enchantment%");
+		put("Extraction.fail", "§8[§f-§8] §cExtraction Failed!");
+		put("Extraction.unsafe", "§8[§f-§8] §cUnable to extract unsafe enchantments!");
+		put("Extraction.constraint", "§8[§f-§8] §cCannot extract from this item!");
+		put("Extraction.filter.minecraft", "§8[§f-§8] §cUnable to extract non-minecraft enchantments!");
+		put("Extraction.filter.custom", "§8[§f-§8] §cUnable to extract minecraft enchantments!");
+		put("Extraction.destroy", "§8[§f-§8] §cExtraction Failed! <#ff0000>Enchantment %enchantment% was destroyed!");
 		
 		put("Extraction.selection.name", "Select an enchantment");
 		put("Extraction.selection.enchantment.name", "<#0080ff>Enchantment: %enchantment%");
-		put("Extraction.selection.enchantment.info", "  <#808080><!italic>Click to extract");
+		put("Extraction.selection.enchantment.info", "<#808080>Click to extract");
 		defaulted("Extraction.selection.color.minecraft", "#00ffff");
 		defaulted("Extraction.selection.color.custom", "#00ffff");
 		defaulted("Extraction.selection.color.curse", "#ff0000");
 		
-		put("Dust.split.held", "<#800000>(!) <#ff8000>Cannot split from held item!");
-		put("Dust.split.invalid", "<#800000>(!) <#ff8000>Invalid amount (%amount%)!");
-		put("Dust.split.too-large", "<#800000>(!) <#ff8000>Cannot split more than or equal to %value%%!");
-		put("Dust.split.too-small", "<#800000>(!) <#ff8000>Cannot split from this dust!");
+		put("Dust.split.held", "§8[§f-§8] §cCannot split from held item!");
+		put("Dust.split.invalid", "§8[§f-§8] §cInvalid amount (%amount%)!");
+		put("Dust.split.too-large", "§8[§f-§8] §cCannot split more than or equal to %value%%!");
+		put("Dust.split.too-small", "§8[§f-§8] §cCannot split from this dust!");
 		
-		put("Book.info.chance", "<#a6a6a6>Applying chance: <#6699ff>%chance%%");
-		put("Book.apply.fail", "<#800000>(!) <#ff8000>Enchantment book failed to apply!");
+		put("Book.info.chance", "<#a6a6a6>Applying chance: §f%chance%%");
+		put("Book.apply.fail", "§8[§f-§8] §cEnchantment book failed to apply!");
 		
 		EnchantmentRegistry.ENCHANTMENTS.forEach((key, enchantment) -> {
 			put("Enchantments." + key, enchantment.name());
