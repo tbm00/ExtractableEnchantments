@@ -10,6 +10,9 @@ A spigot plugin that enables players to extract enchantments from items.
 ## Stream Changelog
 - ***This* plugin:** https://github.com/tbm00/ExtractableEnchantments
 
+    v11.7-MC64
+    - added support for 1.21.3
+    
     v11.6-MC64
     - customized language
     - disabled version checking
