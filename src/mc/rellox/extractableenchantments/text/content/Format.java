@@ -7,11 +7,11 @@ import java.util.stream.Stream;
 public final class Format {
 	
 	public static final Format none = new Format("");
-	public static final Format bold = new Format("�l");
-	public static final Format italic = new Format("�o");
-	public static final Format underline = new Format("�n");
-	public static final Format strikethrough = new Format("�m");
-	public static final Format obfuscated = new Format("�k");
+	public static final Format bold = new Format("§l");
+	public static final Format italic = new Format("§o");
+	public static final Format underline = new Format("§n");
+	public static final Format strikethrough = new Format("§m");
+	public static final Format obfuscated = new Format("§k");
 	
 	public static Format of(Format... fs) {
 		return new Format(Stream.of(fs)
