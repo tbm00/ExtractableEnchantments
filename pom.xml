@@ -23,14 +23,6 @@
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
-    <repository>
-      <id>auxilor</id>
-      <url>https://repo.auxilor.io/repository/maven-public/</url>
-    </repository>
-    <repository>
-      <id>crazycrew-releases</id>
-      <url>https://repo.crazycrew.us/releases</url>
-    </repository>
   </repositories>
   	
   <dependencies>
@@ -45,29 +37,17 @@
       <artifactId>VaultAPI</artifactId>
       <version>1.7.1</version>
       <scope>provided</scope>
-	</dependency>
-    <dependency>
-      <groupId>com.willfp</groupId>
-      <artifactId>eco</artifactId>
-      <version>6.67.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.willfp</groupId>
-      <artifactId>EcoEnchants</artifactId>
-      <version>11.0.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.badbones69.crazyenchantments</groupId>
-      <artifactId>crazyenchantments-paper-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
   
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
