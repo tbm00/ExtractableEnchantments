@@ -259,13 +259,13 @@ public final class CommandRegistry {
 			if(amount <= free) {
 				ItemStack[] items = ei.items(amount);
 				getter.getInventory().addItem(items);
-				success(getter, "Received " + amount + " " + Text.display(items[0]));
+				//success(getter, "Received " + amount + " " + Text.display(items[0]));
 				return;
 			}
 
 			ItemStack[] invItems = ei.items(free);
 			getter.getInventory().addItem(invItems);
-			success(getter, "Received " + free + " " + Text.display(invItems[0]));
+			//success(getter, "Received " + free + " " + Text.display(invItems[0]));
 
 			int left = amount - free;
 			ItemStack[] leftOverItems = ei.items(left);
