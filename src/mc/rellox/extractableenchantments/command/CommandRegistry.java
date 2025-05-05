@@ -152,7 +152,7 @@ public final class CommandRegistry {
 			if(player == null) return;
 			ItemStack[] items = di.items(p, amount);
 			player.getInventory().addItem(items);
-			success(sender, "Got #0 × #1", Text.display(items[0]), amount);
+			success(sender, "Got #0 ï¿½ #1", Text.display(items[0]), amount);
 			player.playSound(player.getEyeLocation(), Sound.ENTITY_ITEM_PICKUP, 2f, 1.5f);
 		} else {
 			Player getter = Bukkit.getPlayer(args[4]);
@@ -239,7 +239,7 @@ public final class CommandRegistry {
 			if(player == null) return;
 			ItemStack[] items = ei.items(amount);
 			player.getInventory().addItem(items);
-			success(sender, "Got #0 × #1", Text.display(items[0]), amount);
+			success(sender, "Got #0 ï¿½ #1", Text.display(items[0]), amount);
 			player.playSound(player.getEyeLocation(), Sound.ENTITY_ITEM_PICKUP, 2f, 1.5f);
 		} else {
 			Player getter = Bukkit.getPlayer(args[3]);
@@ -305,13 +305,13 @@ public final class CommandRegistry {
 	}
 	
 	private static void warn(CommandSender sender, String warning, Object... os) {
-		String w = ChatColor.DARK_RED + "(!) " + ChatColor.GOLD + warning;
+		String w = ChatColor.DARK_GRAY + "[" + ChatColor.WHITE + "-" + ChatColor.DARK_GRAY + "] " + ChatColor.GOLD + warning;
 		if(os != null) for(int i = 0; i < os.length; i++) w = w.replace("#" + i, ChatColor.YELLOW + os[i].toString() + ChatColor.GOLD);
 		sender.sendMessage(w);
 	}
 	
 	private static void success(CommandSender sender, String success, Object... os) {
-		String w = ChatColor.DARK_GREEN + "(!) " + ChatColor.DARK_AQUA + success;
+		String w = ChatColor.DARK_GRAY + "[" + ChatColor.WHITE + "-" + ChatColor.DARK_GRAY + "] " + ChatColor.DARK_AQUA + success;
 		if(os != null) for(int i = 0; i < os.length; i++) w = w.replace("#" + i, ChatColor.AQUA + os[i].toString() + ChatColor.DARK_AQUA);
 		sender.sendMessage(w);
 	}
