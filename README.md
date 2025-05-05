@@ -1,25 +1,23 @@
-# ExtractableEnchantments (fork) 
-A spigot plugin that enables players to extract enchantments from items.
+# ExtractableEnchantments
 
-**Thank you to the original developer OfficialRell (rellox).** This was created to customize and improve the plugin's language.
+Implements extractors that can remove enchantments from items.
 
-## Dependencies
-- **Java 16+**: REQUIRED
-- **Spigot 1.14+**: UNTESTED ON OLDER VERSIONS
+## Using with Maven
 
-## Stream Changelog
-- ***This* plugin:** https://github.com/tbm00/ExtractableEnchantments
+```
+<dependency>
+  <groupId>mc.rellox</groupId>
+  <artifactId>ExtractableEnchantments</artifactId>
+  <version>11.9</version>
+  <scope>provided</scope>
+</dependency>
 
-    v11.8-MC64
-    - added support for 1.21.4
+<repository>
+  <id>jitpack.io</id>
+  <url>https://jitpack.io</url>
+</repository>
+```
 
-    v11.7-MC64
-    - added support for 1.21.3
-    
-    v11.6-MC64
-    - customized language
-    - disabled version checking
-    - moved `~/plugin.yml` to `~/src/resources/plugin.yml`
-- **Parent:** https://github.com/OfficialRell/ExtractableEnchantments/
+## Contacting me
 
-    v11.6, commit `d8c75f4`
+Discord server: https://discord.com/invite/NU9aVbb79d

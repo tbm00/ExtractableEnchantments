@@ -1,6 +1,7 @@
-package mc.rellox.extractableenchantments.extractor;
+package mc.rellox.extractableenchantments.extractor.selection;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -17,11 +18,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import mc.rellox.extractableenchantments.ExtractableEnchantments;
+import mc.rellox.extractableenchantments.api.extractor.IExtractPrice;
 import mc.rellox.extractableenchantments.api.extractor.IExtractor;
 import mc.rellox.extractableenchantments.api.extractor.ISelectionExtract;
 import mc.rellox.extractableenchantments.api.item.enchantment.IEnchantment;
 import mc.rellox.extractableenchantments.api.item.enchantment.ILevelledEnchantment;
 import mc.rellox.extractableenchantments.configuration.Configuration.CF;
+import mc.rellox.extractableenchantments.extractor.ExtractorRegistry;
 import mc.rellox.extractableenchantments.configuration.Language;
 import mc.rellox.extractableenchantments.item.ItemRegistry;
 import mc.rellox.extractableenchantments.text.Text;
@@ -95,7 +98,7 @@ public class SelectionExtract implements ISelectionExtract, Listener {
 	private final void onClick(InventoryClickEvent event) {
 		if(v.equals(event.getInventory()) == false) return;
 		event.setCancelled(true);
-		if(v.equals(event.getClickedInventory()) == false) return;
+		if(v.equals(event.getClickedInventory()) == true) return;
 		
 		int s = event.getSlot() - 9;
 		if(s < 0 || s >= enchantments.size()) return;
@@ -104,7 +107,8 @@ public class SelectionExtract implements ISelectionExtract, Listener {
 		unregister();
 		player.closeInventory();
 		
-		if(extractor.price().enabled() == true) extractor.price().price().remove(player);
+		IExtractPrice price = extractor.price();
+		if(price.enabled() == true) price.price().remove(player);
 		
 		ExtractorRegistry.extract(extractor, player, item_enchanted, item_extractor, levelled);
 	}
@@ -140,7 +144,7 @@ public class SelectionExtract implements ISelectionExtract, Listener {
 		ItemMeta meta = item.getItemMeta();
 		
 		String color;
-		if(enchantment.curse() == true) color =CF.l.color_curse;
+		if(enchantment.curse() == true) color = CF.l.color_curse;
 		else if(enchantment.minecraft() == true) color = CF.l.color_minecraft;
 		else color = CF.l.color_custom;
 		
@@ -149,7 +153,9 @@ public class SelectionExtract implements ISelectionExtract, Listener {
 		
 		meta.setLore(Text.toText(Language.list("Extraction.selection.enchantment.info")));
 		
-		meta.addItemFlags(ItemFlag.values());
+		meta.addItemFlags(Stream.of(ItemFlag.values())
+				.filter(i -> i.ordinal() < 8)
+				.toArray(ItemFlag[]::new));
 		ItemRegistry.glint(meta);
 		
 		item.setItemMeta(meta);
