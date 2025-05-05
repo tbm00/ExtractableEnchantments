@@ -162,14 +162,22 @@ public final class CommandRegistry {
 			}
 			int free = ItemRegistry.free(getter);
 			if(amount <= free) {
-				getter.getInventory().addItem(di.items(p, amount));
+				ItemStack[] items = di.items(p, amount);
+				getter.getInventory().addItem(items);
+				success(getter, "Received " + amount + " " + Text.display(items[0]));
 				return;
 			}
+			
+			ItemStack[] invItems = di.items(p, free);
+			getter.getInventory().addItem(invItems);
+			success(getter, "Received " + free + " " + Text.display(invItems[0]));
+
 			int left = amount - free;
-			getter.getInventory().addItem(di.items(p, free));
-			ItemStack[] items = di.items(p, left);
-			for(ItemStack item : items)
+			ItemStack[] leftOverItems = di.items(p, left);
+			for(ItemStack item : leftOverItems) {
 				getter.getWorld().dropItem(getter.getLocation(), item);
+				success(getter, "Dropped on ground: " + amount + " " + Text.display(item));
+			}
 		}
 	}
 
@@ -249,14 +257,22 @@ public final class CommandRegistry {
 			}
 			int free = ItemRegistry.free(getter);
 			if(amount <= free) {
-				getter.getInventory().addItem(ei.items(amount));
+				ItemStack[] items = ei.items(amount);
+				getter.getInventory().addItem(items);
+				success(getter, "Received " + amount + " " + Text.display(items[0]));
 				return;
 			}
-			int l = amount - free;
-			getter.getInventory().addItem(ei.items(free));
-			ItemStack[] items = ei.items(l);
-			for(ItemStack item : items)
+
+			ItemStack[] invItems = ei.items(free);
+			getter.getInventory().addItem(invItems);
+			success(getter, "Received " + free + " " + Text.display(invItems[0]));
+
+			int left = amount - free;
+			ItemStack[] leftOverItems = ei.items(left);
+			for(ItemStack item : leftOverItems) {
 				getter.getWorld().dropItem(getter.getLocation(), item);
+				success(getter, "Dropped on ground: " + amount + " " + Text.display(item));
+			}
 		}
 	}
 	
